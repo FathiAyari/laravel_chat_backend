@@ -18,10 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/sign-up', [UserAuthController::class, 'SignUp']);
-Route::post('/sign-in', [UserAuthController::class, 'SignIn']);
-Route::post('/sign-up-with-facebook', [UserAuthController::class, 'SignUpWithFacebook']);
-Route::post('/sign-in-with-facebook', [UserAuthController::class, 'SignInWithFacebook']);
-Route::post('/sign-up-with-google', [UserAuthController::class, 'SignUpWithGoggle']);
-Route::post('/sign-in-with-google', [UserAuthController::class, 'SignInWithGoogle']);
+Route::post('/signup', [UserAuthController::class, 'SignUp']);
+Route::post('/signin', [UserAuthController::class, 'SignIn']);
+
 
