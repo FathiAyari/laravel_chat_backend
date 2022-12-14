@@ -26,7 +26,7 @@ if(!$check){
         ]);
         $token = $user->createToken('Personal Access Token')->plainTextToken;
         $response = ['user' => $user, 'token' => $token];
-        return response()->json($response, 200);
+        return response()->json($user, 200);
     } else {
         $user = User::create([
             'name' => $request->name,
@@ -52,7 +52,7 @@ if(!$check){
             if ($user && Hash::check($request->password, $user->password)) {
                 $token = $user->createToken('Personal Access Token')->plainTextToken;
                 $response = ['user' => $user, 'token' => $token];
-                return response()->json($response, 200);
+                return response()->json($user, 200);
             }
             return response()->json([], 400);
         } else {
@@ -60,7 +60,7 @@ if(!$check){
             if ($user) {
                 $token = $user->createToken('Personal Access Token')->plainTextToken;
                 $response = ['user' => $user, 'token' => $token];
-                return response()->json($response, 200);
+                return response()->json($user, 200);
             }
             return response()->json([], 400);
         }
