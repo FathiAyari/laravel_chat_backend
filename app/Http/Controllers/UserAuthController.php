@@ -38,7 +38,7 @@ if(!$check){
         $response = ['user' => $user, 'token' => $token];
         return response()->json($user, 200);
     }
-}         return response()->json([], 202);
+}         return response()->json($check, 202);
 
 
     }
